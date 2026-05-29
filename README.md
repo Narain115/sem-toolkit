@@ -95,4 +95,19 @@ Key results:
 
 ---
 
-## Tech Stack
+## Dashboard Screenshots
+
+### Overview
+![Overview](screenshots/overview.png)
+
+### Module 1: Fault Detection
+![Fault Detection](screenshots/module1.png)
+
+### Module 2: Optical Metrology
+![Optical Metrology](screenshots/module2.png)
+
+### Module 3: Wafer Defect Classification
+![Wafer Defect](screenshots/module3.png)
+
+### Module 4: Process DOE
+![Process DOE](screenshots/module4.png)
