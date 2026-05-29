@@ -1,0 +1,9 @@
+venv/
+data/LSWMD.pkl
+data/secom.data
+data/secom_labels.data
+data/secom.names
+__pycache__/
+*.pyc
+.streamlit/
+outputs/
