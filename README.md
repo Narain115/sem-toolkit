@@ -8,8 +8,23 @@ yield prediction, optical metrology, defect classification, and process optimiza
 
 ## Modules
 
+## Datasets
+
+| Dataset | Source | Size | Description |
+|---|---|---|---|
+| SECOM | [UCI ML Repository](https://archive.ics.uci.edu/dataset/179/secom) | 1,567 wafers × 591 sensors | Real semiconductor fab process data |
+| WM-811K | [Kaggle / MIR Lab](https://www.kaggle.com/datasets/qingyi/wm811k-wafer-map) | 811,457 wafer maps | Real wafer bin maps from TSMC production |
+
+**Note on Module 4:** The PECVD Si₃N₄ process model is physics-informed simulation 
+based on published CVD process relationships. Parameter ranges and response 
+equations are derived from literature values for PECVD silicon nitride deposition 
+(temperature 250-350°C, RF power 50-150W, pressure 1-3 Torr, SiH4 flow 20-60 sccm).
+
+**Note on Module 2:** Optical constants (n, k) are based on values from the 
+Palik Handbook of Optical Constants of Solids, the standard reference for 
+semiconductor material optical properties.
+
 ### Module 1: Wafer Fault Detection
-**Dataset:** SECOM semiconductor manufacturing process data (UCI ML Repository)  
 **Problem:** 1,567 wafers, 591 sensor readings, 14:1 pass/fail class imbalance  
 **Methods:** Feature selection, SMOTE balancing, Random Forest, SHAP explainability
 
@@ -35,7 +50,6 @@ Key results:
 ---
 
 ### Module 3: Wafer Map Defect Classification
-**Dataset:** WM-811K (811,457 wafer maps from real TSMC fabrication, MIR Lab)  
 **Problem:** Classify 8 defect pattern types from wafer bin maps  
 **Methods:** CNN, Grad-CAM spatial explainability, balanced sampling
 
