@@ -76,6 +76,27 @@ if page == "🏠 Overview":
         st.caption("Module 4: PECVD DOE")
 
     st.markdown("---")
+    st.subheader("Data Sources")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("""
+        **SECOM Semiconductor Manufacturing Dataset**  
+        Source: UCI Machine Learning Repository  
+        1,567 wafers · 591 sensor readings · Real fab process data  
+        [Download Dataset](https://archive.ics.uci.edu/dataset/179/secom)
+        """)
+
+    with col2:
+        st.markdown("""
+        **WM-811K Wafer Map Dataset**  
+        Source: MIR Lab (collected from TSMC production)  
+        811,457 wafer maps · 8 defect pattern types · Real fab data  
+        [Download Dataset](https://www.kaggle.com/datasets/qingyi/wm811k-wafer-map)
+        """)
+
+    st.markdown("---")
     st.subheader("What this toolkit demonstrates")
 
     col_a, col_b = st.columns(2)
@@ -112,7 +133,8 @@ if page == "🏠 Overview":
 elif page == "🔬 Fault Detection (SECOM)":
     st.title("Module 1: Wafer Fault Detection")
     st.markdown("""
-    **Dataset:** SECOM semiconductor manufacturing (UCI Machine Learning Repository)  
+    **Dataset:** SECOM semiconductor manufacturing  
+    **Source:** [UCI ML Repository](https://archive.ics.uci.edu/dataset/179/secom) — McCann & Johnston (2008)  
     **Problem:** 1,567 wafers, 591 sensor readings each, 14:1 pass/fail imbalance  
     **Approach:** Feature selection → SMOTE balancing → Random Forest → SHAP explainability
     """)
@@ -159,6 +181,7 @@ elif page == "💡 Optical Metrology":
     **Application:** Spectroscopic ellipsometry fitting, thickness uniformity mapping  
     **Relevance:** In-line non-destructive metrology used by KLA, AMAT, ASM equipment
     """)
+    st.info("Optical constants (n, k) from Palik Handbook of Optical Constants of Solids. TMM physics based on Hecht, Optics (5th ed).")
 
     st.markdown("---")
     col1, col2, col3 = st.columns(3)
@@ -206,8 +229,9 @@ elif page == "💡 Optical Metrology":
 elif page == "🗺️ Wafer Defect Classification":
     st.title("Module 3: Wafer Map Defect Classification")
     st.markdown("""
-    **Dataset:** WM-811K (811,457 wafer maps from real TSMC fabrication)  
-    **Problem:** Classify 8 defect pattern types from wafer bin maps  
+    **Dataset:** WM-811K wafer map dataset  
+    **Source:** [Kaggle / MIR Lab](https://www.kaggle.com/datasets/qingyi/wm811k-wafer-map) — Wu et al. (2014)  
+    **Size:** 811,457 wafer maps from real TSMC fabrication lines  
     **Approach:** CNN with Grad-CAM spatial explainability
     """)
 
@@ -259,6 +283,7 @@ elif page == "🧪 Process DOE Optimization":
     **Factors:** Temperature · RF Power · Pressure · SiH4 Flow  
     **Responses:** Deposition rate · Film stress · Refractive index · Uniformity
     """)
+    st.info("Physics-informed simulation based on published PECVD Si₃N₄ literature. Parameter ranges derived from real CVD process windows. Not proprietary fab data.")
 
     st.markdown("---")
     col1, col2, col3, col4 = st.columns(4)
